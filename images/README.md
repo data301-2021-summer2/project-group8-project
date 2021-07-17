@@ -1,0 +1,1 @@
+# This folder contains images, visuals and graphics used for our project.

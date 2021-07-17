@@ -28,7 +28,7 @@ The data is updated frequently, and we are using their latest data set for Vanco
 ## Team Members
 
 - Ahmad Raza Jamal: Fifth year computer science major with passion for front-end and design 
-- Maruf Zubery: one sentence about you!
+- Maruf Zubery: Fifth year manufacturing engineering with a passion for travelling, drone cinematography and coding on the side.
 
 ## References
 
