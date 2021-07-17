@@ -8,8 +8,8 @@ Details for Milestone are available on Canvas (left sidebar, Course Project) or 
 
 We choose this specific data set out of the millions out there because we love travelling and we make bookings with Airbnb frequently. So we wanted to find out more about what influences them. Why some airbnb's are cheaper than the others? And what makes them stand out? So to answer these questions, we choose this data set.
 
-                             You can thank us later if you ever decide to list your first ever 
-                             Airbnb,you would know exaclty what to do, to make yours stand out!
+    You can thank us later if you ever decide to list your first ever 
+    Airbnb,you would know exaclty what to do, to make yours stand out!
 
 Some specific questions we are thinking of tackling are: 
 
