@@ -37,7 +37,7 @@ def load_and_process(url_or_path_to_csv_file):
                     "room_type": "Room_Type",
                     "bathrooms_text": "Num_Baths_Detailed",
                     "bedrooms": "Num_Bedrooms",
-                    "beds": "Num_Bedrooms",
+                    "beds": "Num_Beds",
                     "price": "Price_per_Night",
                     "amenities": "Amenities",
                     "minimum_nights": "Minimum_Nights",
@@ -58,6 +58,7 @@ def load_and_process(url_or_path_to_csv_file):
            .assign(Superhost = df1["Superhost"].apply(lambda x: x == "t"))
            .assign(Num_Baths = df1["Num_Baths_Detailed"].apply(lambda x: (str(x)[0])))
            .assign(Price_per_Night = df1["Price_per_Night"].apply(lambda x: float(x[1:].replace(",",""))))
+           .assign(Amenities = df1["Amenities"].apply(lambda x: len(x)))
            .reset_index(drop=True)
           )
 
