@@ -13,7 +13,7 @@ We choose this specific data set out of the millions out there because we love t
 
 Some specific questions we are thinking of tackling are: 
 
-1. What are the top 5 factors that affect the prices of Airbnbs that have similar features (e.g. num of beds and baths), and is there a relation b/w location and bookings by travellers?
+1. What are the top 4 factors that affect the prices of Airbnbs, and is there a relation b/w location and bookings by travellers?
 2. Do user reviews have an effect on the income of Airbnb owners?
 
 ## Description of Dataset
