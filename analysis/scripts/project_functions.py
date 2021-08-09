@@ -26,7 +26,9 @@ def load_and_process(url_or_path_to_csv_file):
                     "review_scores_cleanliness",
                     "review_scores_communication",
                     "review_scores_value",
-                    "calculated_host_listings_count"
+                    "calculated_host_listings_count",
+                    "longitude",
+                    "latitude"
           ]]
           .rename(columns={
                     "id": "Airbnb_Id",
