@@ -2,6 +2,25 @@ import pandas as pd
 import numpy as np
 from pandas_profiling import ProfileReport
 
+# Filters the number of reviews into categories
+def filterReviews(reviews): 
+    if(reviews < 5):
+        return "Less than 5"
+    elif(reviews >= 5 and reviews < 10):
+        return "Between 5 and 10"
+    elif(reviews >= 10 and reviews < 20):
+        return "Between 10 and 20"
+    elif(reviews >= 20 and reviews < 35):
+        return "Between 20 and 35"
+    elif(reviews >= 35 and reviews < 50):
+        return "Between 35 and 50"
+    elif(reviews >= 50 and reviews < 75):
+        return "Between 50 and 75"
+    elif(reviews >= 75 and reviews < 100):
+        return "Between 75 and 100"
+    else: 
+        return "More than 100"
+    
 def load_and_process(url_or_path_to_csv_file):
 
     # Method Chain 1 (Load data and deal with missing data)
@@ -61,6 +80,7 @@ def load_and_process(url_or_path_to_csv_file):
            .assign(Num_Baths = df1["Num_Baths_Detailed"].apply(lambda x: (str(x)[0])))
            .assign(Price_per_Night = df1["Price_per_Night"].apply(lambda x: float(x[1:].replace(",",""))))
            .assign(Amenities = df1["Amenities"].apply(lambda x: len(x)))
+           .assign(Num_Reviews = df1["Num_Reviews"].apply(lambda x: filterReviews(x)))
            .reset_index(drop=True)
           )
 
