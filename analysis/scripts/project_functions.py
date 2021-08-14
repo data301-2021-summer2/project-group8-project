@@ -45,6 +45,7 @@ def load_and_process(url_or_path_to_csv_file):
                     "review_scores_cleanliness",
                     "review_scores_communication",
                     "review_scores_value",
+                    "reviews_per_month",
                     "calculated_host_listings_count",
                     "longitude",
                     "latitude"
@@ -68,6 +69,7 @@ def load_and_process(url_or_path_to_csv_file):
                     "review_scores_cleanliness": "Cleanliness_ReviewScore",
                     "review_scores_communication": "Communication_ReviewScore",
                     "review_scores_value": "Value_ReviewScore",
+                    "reviews_per_month": "Reviews_per_Month",
                     "calculated_host_listings_count": "Num_Host_Listings"
                     }, errors= "raise")
             .dropna()
@@ -83,8 +85,27 @@ def load_and_process(url_or_path_to_csv_file):
            .assign(Num_Reviews = df1["Num_Reviews"].apply(lambda x: filterReviews(x)))
            .reset_index(drop=True)
           )
+    
+    ###Create 3 New Columns :"Minimum_Income_per_Booking","Yearly_Income", "Monthly_Income"###
+
+    #Column "Minimum_Income_per_Booking" is calculated by multiplying "Price_per_Night" and "Minimum_Nights"
+
+    df2['Minimum_Income_per_Booking'] = df2['Price_per_Night']*df2['Minimum_Nights']
+    
+    #Column "Monthly_Income" is calculated by multiplying "Minimum_Income_per_Booking" and "Reviews_per_Month"
+
+    # ASSUMPTION: Guests may or may not leave reviews after their stay, however for our analysis purposes, 
+    # we are assuming all guests leave reviews
+    # ASSUMPTION: Yearly and Monthly income estimates are conservative and could be higher
+    
+    df2['Monthly_Income'] = df2['Minimum_Income_per_Booking']*df1['Reviews_per_Month']
+    
+    #Column "Yearly_Income" is calculated by multiplying "Monthly_Income" times "12
+
+    df2['Yearly_Income'] = df2['Monthly_Income']*12
+
 
     # Shifts the columns around to the right position
     first_column = df2.pop('Num_Baths')
     df2.insert(0, 'Num_Baths', first_column)
-    return df2
+    return df2.dropna()
