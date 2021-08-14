@@ -37,4 +37,4 @@ Dataset for Airbnb: http://insideairbnb.com
 
 ## Link to Presentation
 
-Link for presentation: [Click here to check out our video!](https://vimeo.com/manage/videos/587054290)
+Link to presentation: [Click here to check out our video!](https://vimeo.com/manage/videos/587054290)
