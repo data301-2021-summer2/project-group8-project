@@ -34,3 +34,7 @@ The data is updated frequently, and we are using their latest data set for Vanco
 ## References
 
 Dataset for Airbnb: http://insideairbnb.com
+
+## Link to Presentation
+
+Link for presentation: [Click here to check out our video!](https://vimeo.com/manage/videos/587054290)
